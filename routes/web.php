@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulariosController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ViewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/formulario_add_curso', [FormulariosController::class, 'adiciona_cursos']);
-Route::get('/formulario_add_aluno', [FormulariosController::class, 'adiciona_alunos']);
+Route::get('/', [ViewsController::class, 'principal']);
+Route::get('/formulario_add_curso', [ViewsController::class, 'adiciona_cursos']);
+Route::get('/formulario_add_aluno', [ViewsController::class, 'adiciona_alunos']);
 Route::get('/login', [LoginController::class, 'login']);

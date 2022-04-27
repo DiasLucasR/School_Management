@@ -6,17 +6,12 @@ use Illuminate\Http\Request;
 
 class FormulariosController extends Controller
 {
-    public function adiciona_cursos()
+   
+
+    public function recebe()
     {
 
         
-        return view('formaddcurso');
-    }
-
-    public function adiciona_alunos()
-    {
-
-        
-        return view('formaddcurso');
+        return view('formaddaluno');
     }
 }
