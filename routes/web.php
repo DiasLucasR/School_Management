@@ -18,10 +18,16 @@ use App\Http\Controllers\ViewsController;
 
 
 
-
-Route::get('/', [ViewsController::class, 'principal']);
-Route::get('/formulario_add_curso', [ViewsController::class, 'adiciona_cursos']);
-Route::get('/formulario_add_aluno', [ViewsController::class, 'adiciona_alunos']);
 Route::get('/login', [LoginController::class, 'login']);
+Route::get('/', [ViewsController::class, 'principal']);
 
-Route::post('/adicionaalunos', [FormulariosController::class, 'adicionaalunosmodel']);
+Route::get('/cursos/adicionar_alunos', [ViewsController::class, 'adiciona_cursos']);
+
+Route::get('/alunos/adicionar_cursos', [ViewsController::class, 'adiciona_alunos']);
+
+
+
+Route::post('/alunos/adicionar', [FormulariosController::class, 'adicionaalunosmodel']);
+
+
+Route::post('/cursos/adicionar', [FormulariosController::class, 'adicionaalunosmodel']);

@@ -12,18 +12,19 @@
 </head>
 
 <body>
-  <div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+   <div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="text-center">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/formulario_add_curso">Adicionar Curso</a>
+            <a class="nav-link" href="/cursos/adicionar_alunos">Adicionar Curso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/formulario_add_aluno">Adicionar Aluno</a>
+            <a class="nav-link" href="/alunos/adicionar_cursos">Adicionar Aluno</a>
           </li>
           <li class="nav-right">
             <a class="nav-link" href="/">Sair</a>
@@ -36,7 +37,8 @@
   <div class="container ">
 
     <h2>Inserir Curso</h2>
-    <form action="/" >
+    <form action="/" method="post" >
+    @csrf
       <div class="form-group ">
         <div class="col-6">
           <label for="nomecurso">Nome do Curso:</label>

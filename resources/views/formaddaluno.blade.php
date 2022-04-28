@@ -20,10 +20,10 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/formulario_add_curso">Adicionar Curso</a>
+            <a class="nav-link" href="/cursos/adicionar_alunos">Adicionar Curso</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/formulario_add_aluno">Adicionar Aluno</a>
+            <a class="nav-link" href="/alunos/adicionar_cursos">Adicionar Aluno</a>
           </li>
           <li class="nav-right">
             <a class="nav-link" href="/">Sair</a>
@@ -35,7 +35,7 @@
   
   <div class="container">
     <h2>Inserir Aluno </h2>
-    <form action="/adicionaalunos" method="post" >
+    <form action="/alunos/adicionarmodel" method="post" >
     @csrf
     <div class="form-group">
         <label for="nomecurso">Nome do Aluno:</label>
@@ -60,10 +60,7 @@
 
  
   </div>
-    <label >Meu nome é: {{ $nome }} </label> <br>
-    <label >Meu Login é: {{ $login }} </label> <br>
-    <label >Meu email é: {{ $email }} </label> <br>
-    <label >Minha senha é: {{ $senha }} </label> <br>
+
 
 </body>
 
