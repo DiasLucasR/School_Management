@@ -36,7 +36,7 @@
   <div class="container ">
 
     <h2>Inserir Curso</h2>
-    <form action="/">
+    <form action="/" >
       <div class="form-group ">
         <div class="col-6">
           <label for="nomecurso">Nome do Curso:</label>

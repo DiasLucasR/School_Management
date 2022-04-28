@@ -17,11 +17,11 @@ use App\Http\Controllers\ViewsController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/', [ViewsController::class, 'principal']);
 Route::get('/formulario_add_curso', [ViewsController::class, 'adiciona_cursos']);
 Route::get('/formulario_add_aluno', [ViewsController::class, 'adiciona_alunos']);
 Route::get('/login', [LoginController::class, 'login']);
+
+Route::post('/adicionaalunos', [FormulariosController::class, 'adicionaalunosmodel']);

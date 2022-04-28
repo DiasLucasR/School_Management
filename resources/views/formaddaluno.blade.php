@@ -35,13 +35,14 @@
   
   <div class="container">
     <h2>Inserir Aluno </h2>
-    <form action="/">
-      <div class="form-group">
+    <form action="/adicionaalunos" method="post" >
+    @csrf
+    <div class="form-group">
         <label for="nomecurso">Nome do Aluno:</label>
         <input type="text" class="form-control" id="nomealuno" placeholder="Insira seu nome" name="nomealuno">
 
         <label for="usualuno">Usuário:</label>
-        <input type="text" class="form-control " id="usuarioaluno" placeholder="Insira usuario de acesso" name="usualuno">
+        <input type="text" class="form-control " id="usuarioaluno" placeholder="Insira usuario de acesso" name="usuarioaluno">
 
         <label for="emailaluno">E-mail:</label>
         <input type="email" class="form-control " id="emailaluno" placeholder="email@mail.com" name="emailaluno">
@@ -56,9 +57,13 @@
 
     </form>
 
+
+ 
   </div>
-
-
+    <label >Meu nome é: {{ $nome }} </label> <br>
+    <label >Meu Login é: {{ $login }} </label> <br>
+    <label >Meu email é: {{ $email }} </label> <br>
+    <label >Minha senha é: {{ $senha }} </label> <br>
 
 </body>
 
