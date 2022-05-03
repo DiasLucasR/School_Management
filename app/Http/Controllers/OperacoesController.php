@@ -29,4 +29,43 @@ class OperacoesController extends Controller
         
      
     }
+
+    public function exclui_alunos(Request $request)
+    {
+    }
+
+    public function edita_alunos(Request $request)
+    {
+    }
+
+
+
+    public function adiciona_cursos(Request $request)
+    {
+    $request;
+
+        $query = DB::table('courses')->insert([
+
+            'course_name'=>$request->input('nomecurso'),
+            'course_type'=>$request->input('tipocurso'),
+            'course_area'=>$request->input('areacurso'),
+            'created_by' => "Lucas",
+            'created_in' =>   date("m.d.y"),
+        ]);
+        if($query){
+            return back()->with('Sucesso', 'Os dados foram inseridos com sucesso!!');
+  }else{
+            return back()->with('Falha', 'Tente novamente');
+        }
+     
+    }
+
+    public function exclui_cursos(Request $request)
+    {
+    }
+
+    public function edita_cursos(Request $request)
+    {
+    }
+    
 }

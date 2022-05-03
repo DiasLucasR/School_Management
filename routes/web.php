@@ -22,12 +22,15 @@ Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [ViewsController::class, 'principal']);
 
 Route::get('/cursos/adicionar_alunos', [ViewsController::class, 'adiciona_cursos']);
-
 Route::get('/alunos/adicionar_cursos', [ViewsController::class, 'adiciona_alunos']);
 
 
 
 Route::post('/alunos/adicionar', [OperacoesController::class, 'adiciona_alunos']);
+Route::post('/alunos/excluir', [OperacoesController::class, 'exclui_alunos']);
+Route::post('/alunos/editar', [OperacoesController::class, 'edita_alunos']);
 
 
 Route::post('/cursos/adicionar', [OperacoesController::class, 'adiciona_cursos']);
+Route::post('/cursos/excluir', [OperacoesController::class, 'exclui_cursos']);
+Route::post('/cursos/editar', [OperacoesController::class, 'edita_cursos']);
