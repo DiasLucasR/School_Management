@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormulariosController;
+use App\Http\Controllers\OperacoesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ViewsController;
 /*
@@ -27,7 +27,7 @@ Route::get('/alunos/adicionar_cursos', [ViewsController::class, 'adiciona_alunos
 
 
 
-Route::post('/alunos/adicionar', [FormulariosController::class, 'adicionaalunosmodel']);
+Route::post('/alunos/adicionar', [OperacoesController::class, 'adiciona_alunos']);
 
 
-Route::post('/cursos/adicionar', [FormulariosController::class, 'adicionaalunosmodel']);
+Route::post('/cursos/adicionar', [OperacoesController::class, 'adiciona_cursos']);

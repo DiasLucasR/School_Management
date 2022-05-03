@@ -37,7 +37,7 @@
   <div class="container ">
 
     <h2>Inserir Curso</h2>
-    <form action="/" method="post" >
+    <form action="/cursos/adicionar" method="post" >
     @csrf
       <div class="form-group ">
         <div class="col-6">

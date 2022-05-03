@@ -32,10 +32,15 @@
       </div>
     </nav>
   </div>
-  
+  @if(Session::get('sucess'))
+  <div class="alert sucess-alert">
+    {{Session::get('sucesso')}}
+
+  </div>
+  @endif
   <div class="container">
     <h2>Inserir Aluno </h2>
-    <form action="/alunos/adicionarmodel" method="post" >
+    <form action="/alunos/adicionar" method="post" >
     @csrf
     <div class="form-group">
         <label for="nomecurso">Nome do Aluno:</label>
@@ -58,9 +63,19 @@
     </form>
 
 
- 
+    @if(Session::get('Sucesso'))
+  <div class="alert alert-success" role="alert">
+    {{Session::get('Sucesso')}}
   </div>
+  @endif
 
+  @if(Session::get('Falha'))
+  <div class="alert alert-success" role="alert">
+    {{Session::get('Falha')}}
+  </div>
+  @endif
+  </div>
+  
 
 </body>
 
