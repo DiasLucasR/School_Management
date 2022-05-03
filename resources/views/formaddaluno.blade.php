@@ -41,8 +41,8 @@
         <label for="nomecurso">Nome do Aluno:</label>
         <input type="text" class="form-control" id="nomealuno" placeholder="Insira seu nome" name="nomealuno">
 
-        <label for="usualuno">Usuário:</label>
-        <input type="text" class="form-control " id="usuarioaluno" placeholder="Insira usuario de acesso" name="usuarioaluno">
+        <label for="usualuno">CPF:</label>
+        <input type="text" class="form-control " id="cpf_aluno" placeholder="Insira CPF" name="cpf_aluno">
 
         <label for="emailaluno">E-mail:</label>
         <input type="email" class="form-control " id="emailaluno" placeholder="email@mail.com" name="emailaluno">

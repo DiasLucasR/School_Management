@@ -14,8 +14,13 @@ class CreateTeachersTable extends Migration
     public function up()
     {
         Schema::create('teachers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('group_id');
+            $table->string('name');
+            $table->string('education');
+            $table->string('cpf');
+            $table->string('email');
+            $table->string('created_by');
+            $table->dateTime('created_in', $precision = 0);
         });
     }
 
