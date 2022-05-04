@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('cpf');
             $table->string('email');
             $table->string('created_by');
-            $table->dateTime('created_in', $precision = 0);
+            $table->timestamps();
         });
     }
 

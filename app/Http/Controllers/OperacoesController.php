@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,21 +43,16 @@ class OperacoesController extends Controller
 
     public function adiciona_cursos(Request $request)
     {
-    $request;
-
-        $query = DB::table('courses')->insert([
-
-            'course_name'=>$request->input('nomecurso'),
-            'course_type'=>$request->input('tipocurso'),
-            'course_area'=>$request->input('areacurso'),
-            'created_by' => "Lucas",
-            'created_in' =>   date("m.d.y"),
-        ]);
-        if($query){
-            return back()->with('Sucesso', 'Os dados foram inseridos com sucesso!!');
-  }else{
-            return back()->with('Falha', 'Tente novamente');
-        }
+ 
+        $novo_curso = Courses::create(
+            [
+                'course_name'=>$request->input('nomecurso'),
+                'course_type'=>$request->input('tipocurso'),
+                'course_area'=>$request->input('areacurso'),
+                'created_by' => "Lucas",
+            ]
+        );
+        return(dd($request->all()));
      
     }
 

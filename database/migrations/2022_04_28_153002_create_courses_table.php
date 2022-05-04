@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('course_type');
             $table->string('course_area');
             $table->string('created_by');
-            $table->dateTime('created_in', $precision = 0);
+            $table->timestamps();
         });
     }
 

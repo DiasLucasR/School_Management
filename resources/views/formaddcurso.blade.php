@@ -55,8 +55,8 @@
             <option value="Pós-Doutorado">Pós-Doutorado</option>
           </select>
 
-          <label for="areadeatuação">Area</label>
-          <select class="form-control" name="areadeatuação" id="areadeatuação">
+          <label for="areacurso">Area</label>
+          <select class="form-control" name="areacurso" id="areacurso">
             <option value="#">Selecione</option>
             <option value="Exatas">Exatas</option>
             <option value="Humanas">Humanas</option>
