@@ -58,6 +58,7 @@ class OperacoesController extends Controller
 
     public function exclui_cursos(Request $request)
     {
+            
     }
 
     public function edita_cursos(Request $request)
