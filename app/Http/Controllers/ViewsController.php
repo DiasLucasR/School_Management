@@ -11,16 +11,16 @@ class ViewsController extends Controller
         return view('principal');
     }
 
-    public function adiciona_cursos()
+    public function ViewAddCourse()
     {
-        return view('formaddcurso');
+        return view('courses/addcourse');
        
     }
 
-    public function adiciona_alunos()
+    public function ViewAddStudent()
     {
 
         
-        return view('formaddaluno');
+        return view('students/addstudent');
     }
 }

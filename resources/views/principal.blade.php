@@ -15,27 +15,7 @@
 
 <body>
 
-<div>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-      <div class="text-center">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/cursos/adicionar_alunos">Adicionar Curso</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/alunos/adicionar_cursos">Adicionar Aluno</a>
-          </li>
-          <li class="nav-right">
-            <a class="nav-link" href="/">Sair</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
+  @include('props.navbar')
 
 </body>
 

@@ -21,16 +21,16 @@ use App\Http\Controllers\ViewsController;
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [ViewsController::class, 'principal']);
 
-Route::get('/cursos/adicionar_alunos', [ViewsController::class, 'adiciona_cursos']);
-Route::get('/alunos/adicionar_cursos', [ViewsController::class, 'adiciona_alunos']);
+Route::get('/cursos/adicionar_alunos', [ViewsController::class, 'ViewAddStudent']);
+Route::get('/alunos/adicionar_cursos', [ViewsController::class, 'ViewAddCourse']);
 
 
 
-Route::post('/alunos/adicionar', [OperacoesController::class, 'adiciona_alunos']);
-Route::post('/alunos/excluir', [OperacoesController::class, 'exclui_alunos']);
-Route::post('/alunos/editar', [OperacoesController::class, 'edita_alunos']);
+Route::post('/students/add', [OperacoesController::class, 'adicionar_alunos']);
+Route::post('/students/remove', [OperacoesController::class, 'excluir_alunos']);
+Route::post('/students/edit', [OperacoesController::class, 'edita_alunos']);
 
 
-Route::post('/cursos/adicionar', [OperacoesController::class, 'adiciona_cursos']);
-Route::post('/cursos/excluir', [OperacoesController::class, 'exclui_cursos']);
-Route::post('/cursos/editar', [OperacoesController::class, 'edita_cursos']);
+Route::post('/courses/add', [OperacoesController::class, 'Adicionar_cursos']);
+Route::post('/courses/remove', [OperacoesController::class, 'exclui_cursos']);
+Route::post('/courses/edit', [OperacoesController::class, 'edita_cursos']);
