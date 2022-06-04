@@ -17,10 +17,40 @@ class ViewsController extends Controller
        
     }
 
+    public function ViewRemoveCourses()
+    {
+        return view('courses/removecourses');
+       
+    }
+   
+    public function ViewRemoveStudents()
+    {
+
+        
+        return view('students/removestudents');
+    }
+
     public function ViewAddStudent()
     {
 
         
         return view('students/addstudent');
+    }
+
+    public function ViewRemoveTeachers()
+    {
+
+        
+        return view('students/removestudents');
+    }
+
+    public function ViewAddTeachers()
+    {
+
+        
+        return view('students/addstudent');
+    
+
+
     }
 }

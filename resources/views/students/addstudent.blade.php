@@ -23,7 +23,7 @@
             </div>
         @endif
 
-        <form action="/alunos/adicionar" method="post">
+        <form action="/students/add" method="post">
             @csrf
             <div class="form-group">
                 <label for="nomecurso">Nome do Aluno:</label>

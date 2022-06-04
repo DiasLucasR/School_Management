@@ -17,18 +17,20 @@
 
     <div class="container ">
 
-        <h2>Remover Cursos</h2>
+        <h2>Remover Aluno</h2>
         @if (Session::get('Existe'))
             <div class="alert alert-danger" role="alert">
                 {{ Session::get('Existe') }}
             </div>
         @endif
-        <form action="/courses/remove" method="post">
+        <form action="/students/remove" method="post">
             @csrf
             <div class="form-group ">
                 <div>
-                    <label for="coursename">Nome do Curso:</label>
-                    <input type="text" class="form-control" id="coursename" placeholder="Insira o nome do curso" name="coursename"><br>
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Insira o nome do aluno" name="nome">
+                    <label for="nomecurso">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" placeholder="000.000.000.00" name="cpf"><br>
                     <button type="submit" class="btn btn-dark">Remover </button>
                 </div>
             </div>

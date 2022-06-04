@@ -12,7 +12,7 @@ class OperacoesController extends Controller
 {
 
 
-    public function adiciona_alunos(Request $request)
+    public function AddStudents(Request $request)
     {
 
         if (DB::table('students')->where('cpf', $request->input('cpf_aluno'))->exists()) {
@@ -38,13 +38,18 @@ class OperacoesController extends Controller
         }
     }
 
-    public function exclui_alunos(Request $request)
+    public function RemoveStudents(Request $request)
     {
-        $deleted = DB::table('students')->where('cpf', $request->input('cpf_aluno'))->delete();
-        if ($deleted) {
+        if (DB::table('students')->where('cpf', $request->input('cpf'))->exists()) {
+
+            $deleted = DB::table('students')->where('cpf', $request->input('cpf'))->delete();
+
             return back()->with('Eliminado', 'Os dados foram eliminados com sucesso!!');
-        } else {
-            return back()->with('Falha', 'Tente novamente');
+        }
+
+        if (DB::table('students')->where('cpf', $request->input('cpf'))->doesntExist()) {
+
+            return back()->with('Falha', 'Esse aluno não existe!');
         }
     }
 
@@ -55,7 +60,7 @@ class OperacoesController extends Controller
 
 
 
-    public function adiciona_cursos(Request $request)
+    public function AddCourses(Request $request)
     {
 
         if (DB::table('courses')->where('course_name', $request->input('nomecurso'))->exists()) {
@@ -80,17 +85,68 @@ class OperacoesController extends Controller
         }
     }
 
-    public function exclui_cursos(Request $request)
+    public function RemoveCourses(Request $request)
     {
-        $deleted = DB::table('courses')->where('course_name', $request->input('nomecurso'))->delete();
-        if ($deleted) {
+
+        if (DB::table('courses')->where('course_name', $request->input('coursename'))->exists()) {
+
+            $deleted = DB::table('courses')->where('course_name', $request->input('coursename'))->delete();
+
             return back()->with('Eliminado', 'Os dados foram eliminados com sucesso!');
-        } else {
+        }
+
+        if (DB::table('courses')->where('course_name', $request->input('coursename'))->doesntExist()) {
+
             return back()->with('Falha', 'Esse curso não existe!');
         }
     }
 
     public function edita_cursos(Request $request)
+    {
+
+    }
+
+    public function AddTeacher(Request $request)
+    {
+
+        if (DB::table('courses')->where('course_name', $request->input('nomecurso'))->exists()) {
+
+            return back()->with('Existe', 'Esse curso já foi inserido!');
+        }
+
+        if (DB::table('courses')->where('course_name', $request->input('nomecurso'))->doesntExist()) {
+            $novo_curso = Courses::create(
+                [
+                    'course_name' => $request->input('nomecurso'),
+                    'course_type' => $request->input('tipocurso'),
+                    'course_area' => $request->input('areacurso'),
+                    'created_by' => "Lucas",
+                ]
+            );
+            if ($novo_curso) {
+                return back()->with('Sucesso', 'Os dados foram inseridos com sucesso!!');
+            } else {
+                return back()->with('Falha', 'Tente novamente');
+            }
+        }
+    }
+
+    public function RemoveTeacher(Request $request)
+    {
+        if (DB::table('courses')->where('course_name', $request->input('nomecurso'))->exists()) {
+
+            $deleted = DB::table('courses')->where('course_name', $request->input('nomecurso'))->delete();
+
+            return back()->with('Eliminado', 'Os dados foram eliminados com sucesso!');
+        }
+
+        if (DB::table('courses')->where('course_name', $request->input('nomecurso'))->doesntExist()) {
+
+            return back()->with('Falha', 'Esse curso não existe!');
+        }
+    }
+
+    public function ModifyTeacher(Request $request)
     {
 
     }

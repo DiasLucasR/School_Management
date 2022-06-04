@@ -23,7 +23,7 @@
                 {{ Session::get('Existe') }}
             </div>
         @endif
-        <form action="/cursos/adicionar" method="post">
+        <form action="/courses/add" method="post">
             @csrf
             <div class="form-group ">
                 <div>

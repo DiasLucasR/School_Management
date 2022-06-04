@@ -16,9 +16,7 @@
 
 <body>
 
-    <div>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
@@ -29,9 +27,9 @@
                               Cursos
                             </button>
                             <div class="dropdown-menu bg-dark">
-                              <a class="dropdown-item text-light" href="/courses/add">Adicionar</a>
-                              <a class="dropdown-item text-light" href="/courses/remove">Remover</a>
-                              <a class="dropdown-item text-light" href="/courses/edit">Modificar</a>
+                              <a class="dropdown-item text-light" href="/courses/add_courses">Adicionar</a>
+                              <a class="dropdown-item text-light" href="/courses/remove_courses">Remover</a>
+                              <a class="dropdown-item text-light" href="/">Modificar</a>
                             </div>
                           </div>
                     </li>
@@ -41,9 +39,9 @@
                               Alunos
                             </button>
                             <div class="dropdown-menu bg-dark">
-                              <a class="dropdown-item text-light" href="/students/add">Adicionar</a>
-                              <a class="dropdown-item text-light" href="/students/remove">Remover</a>
-                              <a class="dropdown-item text-light" href="/students/edit">Modificar</a>
+                              <a class="dropdown-item text-light" href="/students/add_students">Adicionar</a>
+                              <a class="dropdown-item text-light" href="/students/remove_students">Remover</a>
+                              <a class="dropdown-item text-light" href="/">Modificar</a>
                             </div>
                           </div>
                     </li>
@@ -53,16 +51,17 @@
                               Professores
                             </button>
                             <div class="dropdown-menu bg-dark">
-                              <a class="dropdown-item text-light" href="/teachers/add">Adicionar</a>
-                              <a class="dropdown-item text-light" href="/teachers/remove">Remover</a>
-                              <a class="dropdown-item text-light" href="/teachers/edit">Modificar</a>
+                              <a class="dropdown-item text-light" href="/teachers/add_teachers">Adicionar</a>
+                              <a class="dropdown-item text-light" href="/teachers/remove_teachers">Remover</a>
+                              <a class="dropdown-item text-light" href="/">Modificar</a>
                             </div>
                           </div>
                     </li>
-                    <li class="nav-right ">
-                        <a class="nav-link text-light" href="/">Sair</a>
-                    </li>
-                </ul>
-            </div>
+                  </ul>
+                  <ul class="navbar-nav ml-auto">
+                    <a class="nav-link  text-light" href="/">Sair</a>
+                  </ul>
+                       
+                  
+                
         </nav>
-    </div>
