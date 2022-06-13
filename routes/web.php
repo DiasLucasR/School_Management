@@ -21,27 +21,29 @@ use App\Http\Controllers\ViewsController;
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [ViewsController::class, 'principal']);
 
-Route::get('/courses/add_courses', [ViewsController::class, 'ViewAddCourse']);
-Route::get('/courses/remove_courses', [ViewsController::class, 'ViewRemoveCourses']);
+Route::group(['middleware' => ['auth']], function () { 
+Route::get('/app/courses/add_courses', [ViewsController::class, 'ViewAddCourse']);
+Route::get('/app/courses/remove_courses', [ViewsController::class, 'ViewRemoveCourses']);
 
 
-Route::get('/students/add_students', [ViewsController::class, 'ViewAddStudent']);
-Route::get('/students/remove_students', [ViewsController::class, 'ViewRemoveStudents']);
+Route::get('/app/students/add_students', [ViewsController::class, 'ViewAddStudent']);
+Route::get('/app/students/remove_students', [ViewsController::class, 'ViewRemoveStudents']);
 
-Route::get('/teachers/add_teachers', [ViewsController::class, 'ViewAddTeachers']);
-Route::get('/teachers/remove_teachers', [ViewsController::class, 'ViewRemoveTeachers']);
-
-
-
-Route::post('/students/add', [OperacoesController::class, 'AddStudents']);
-Route::post('/students/remove', [OperacoesController::class, 'RemoveStudents']);
-Route::post('/students/edit', [OperacoesController::class, 'edita_alunos']);
+Route::get('/app/teachers/add_teachers', [ViewsController::class, 'ViewAddTeachers']);
+Route::get('/app/teachers/remove_teachers', [ViewsController::class, 'ViewRemoveTeachers']);
 
 
-Route::post('/courses/add', [OperacoesController::class, 'AddCourses']);
-Route::post('/courses/remove', [OperacoesController::class, 'RemoveCourses']);
-Route::post('/courses/edit', [OperacoesController::class, 'edita_cursos']);
 
-Route::post('/teachers/add', [OperacoesController::class, 'AddTeacher']);
-Route::post('/teachers/remove', [OperacoesController::class, 'RemoveTeacher']);
-Route::post('/teachers/edit', [OperacoesController::class, 'ModifyTeacher']);
+Route::post('/app/students/add', [OperacoesController::class, 'AddStudents']);
+Route::post('/app/students/remove', [OperacoesController::class, 'RemoveStudents']);
+Route::post('/app/students/edit', [OperacoesController::class, 'edita_alunos']);
+
+
+Route::post('/app/courses/add', [OperacoesController::class, 'AddCourses']);
+Route::post('/app/courses/remove', [OperacoesController::class, 'RemoveCourses']);
+Route::post('/app/courses/edit', [OperacoesController::class, 'edita_cursos']);
+
+Route::post('/app/teachers/add', [OperacoesController::class, 'AddTeacher']);
+Route::post('/app/teachers/remove', [OperacoesController::class, 'RemoveTeacher']);
+Route::post('/app/teachers/edit', [OperacoesController::class, 'ModifyTeacher']);
+});
